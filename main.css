@@ -1,0 +1,13 @@
+body{
+    text-align: center;
+}
+
+#display{
+    font-size: 50px;
+    margin-bottom: 40px; 
+}
+
+#start,#stop,#rest{
+    font-size: 25px;
+    background-color: #C0C0C0;
+}
