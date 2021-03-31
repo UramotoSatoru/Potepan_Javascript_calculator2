@@ -34,27 +34,27 @@ function stopWatch(){
 }
 
 start.addEventListener("click",function(){
-   if(watch_status == "stop"){
-   interval = setInterval(stopWatch,100);
+  if(watch_status == "stop"){
+    interval = setInterval(stopWatch,100);
     watch_status = "move";
-   }
+  }
 })
 
 stop.addEventListener("click",function(){
   if(watch_status == "move"){
-  clearInterval(interval);
-  watch_status = "stop";
+    clearInterval(interval);
+    watch_status = "stop";
   }
 })
 
 rest.addEventListener("click",function() {
   clearInterval(interval);
   display.innerHTML = "0:0:0:0";
-   hours = 0;
-   minutes = 0;
-   seconds = 0;
-   mriseconds = 0;
-   watch_status = "stop";
+  hours = 0;
+  minutes = 0;
+  seconds = 0;
+  mriseconds = 0;
+  watch_status = "stop";
 })
 
 $(document).ready(function(){
