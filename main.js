@@ -65,7 +65,7 @@ $(document).ready(function(){
   });
   
   $("#stop").click(function() {
-    $(this).fadeTo("10000", 0.55); 
+    $(this).fadeTo("10000", 0.55);  
     $("#rest").fadeTo("10000", 1);
     $("#start").fadeTo("10000", 1); 
   });
@@ -75,10 +75,5 @@ $(document).ready(function(){
     $("#start").fadeTo("10000", 1); 
     $("#stop").fadeTo("10000", 1); 
   });
-
-  
-  
-  
-  
   
 });
