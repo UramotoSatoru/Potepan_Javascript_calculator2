@@ -1,79 +1,46 @@
-let display = document.getElementById("display");
-let start = document.getElementById("start");
-let stop = document.getElementById("stop");
-let rest = document.getElementById("rest");
 
-let hours = 0;
-let minutes = 0;
-let seconds = 0;
-let mriseconds = 0;
-let interval;
-let watch_status = "stop";
+// 初期値
+let value =0 ;
 
-function stopWatch(){
-  
-  mriseconds++;
-  
-  if(mriseconds / 10 == 1){
-    seconds++;
-    mriseconds = 0;
-    
-    if(seconds / 60 == 1){
-      minutes++;
-      seconds = 0;
-      
-      if(minutes / 60 == 1){
-      hours++;
-      minutes = 0;
-      
-      }
-    }
-  }
+document.addEventListener('click',function(event){
 
-  display.innerHTML = hours + ":" + minutes +":" + seconds + ":" + mriseconds ;
-}
+	let display = document.getElementById('display');
+	// 初期の値が０の場合に空にして先頭に0が出ないようにする
+	if(value == 0){
+		display.innerHTML = "";
+		// 値を追加して以降クリックしても空にするのを防ぐ
+		value = 1;
+	}
 
-start.addEventListener("click",function(){
-  if(watch_status == "stop"){
-    interval = setInterval(stopWatch,100);
-    watch_status = "move";
-  }
+	if(event.target.matches('#eq')){
+		let calcResult = eval(display.innerHTML);
+		// 計算結果がなければ0の値を返す
+		if(!calcResult){
+			display.innerHTML = '0';
+			return;
+		}else{
+			display.innerHTML = calcResult;
+			console.log(calcResult);
+			return;
+		}
+	}
+
+	if(event.target.matches('.clear')){
+		display.innerHTML = '0';
+		// クリアした際は値を初期値に戻す
+		value = 0;
+		return;
+	}
+
+	let clickNumber = event.target.innerHTML;
+	let berforeClickNumber = display.innerHTML;
+
+	// .numberでないクラスをクリックしても反応しない
+	if(!event.target.matches('.number')){
+		return;
+	}
+
+	display.innerHTML = berforeClickNumber + clickNumber ;
+
 })
 
-stop.addEventListener("click",function(){
-  if(watch_status == "move"){
-    clearInterval(interval);
-    watch_status = "stop";
-  }
-})
-
-rest.addEventListener("click",function() {
-  clearInterval(interval);
-  display.innerHTML = "0:0:0:0";
-  hours = 0;
-  minutes = 0;
-  seconds = 0;
-  mriseconds = 0;
-  watch_status = "stop";
-})
-
-$(document).ready(function(){
-  
-  $("#start").click(function() {
-    $(this).fadeTo("10000", 0.55); 
-    $("#stop,#rest").fadeTo("10000", 1); 
-  });
-  
-  $("#stop").click(function() {
-    $(this).fadeTo("10000", 0.55);  
-    $("#rest").fadeTo("10000", 1);
-    $("#start").fadeTo("10000", 1); 
-  });
-  
-  $("#rest").click(function() {
-    $(this).fadeTo("10000", 1); 
-    $("#start").fadeTo("10000", 1); 
-    $("#stop").fadeTo("10000", 1); 
-  });
-  
-});

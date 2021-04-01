@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>  <!-- jqueryで実装する場合 -->
-        <link rel="stylesheet" href="main.css">
-        <title>ストップウォッチ</title>
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="main.css">
+  <title>電卓</title>
+</head>
 
-    <body>
-        <h3>ストップウォッチ</h3>
+<body>
+<div class = "denntaku">
+  <h3>電卓</h3>
+  <p id= "display">0</p>
+  <table>
+    <tr>
+      <td class = "number">7</td><td class = "number">8</td><td class = "number">9</td><td class = "number ">+</td>
+    </tr>
+    <tr>
+      <td class = "number">4</td><td class = "number">5</td><td class = "number">6</td><td class = "number ">-</td>
+    </tr>
+    <tr>
+      <td class = "number">1</td><td class = "number">2</td><td class = "number">3</td><td class = "number ">*</td>
+    </tr>
+    <tr>
+      <td class = "number">0</td><td class = "number">00</td><td class = "number">.</td><td class = "number ">/</td>
+    </tr>
 
-        <div id = "display">0:0:0:0</div>
-        <div class = "buttons">
-          <button id = "start">スタート</button>
-          <button id = "stop">ストップ</button>
-          <button id = "rest">リセット</button>
-          
-        </div>
-        
-        <script src="main.js"></script>
-    
-    </body>
+    </table>
+    <table>
+    <tr>
+    <td class = "clear">AC</td><td id = "eq">=</td>
+    </tr>
+  </table>
+</div>
+
+<script src="main.js"></script>
+
+</body>
 </html>
 
 
