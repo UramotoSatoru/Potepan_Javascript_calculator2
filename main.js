@@ -1,12 +1,9 @@
 // 初期値
 let value = 0;
-
 document.addEventListener('click',function(event){
-
 	let display = document.getElementById('display');
 	let clickNumber = event.target.innerHTML;
 	let berforeClickNumber = display.innerHTML;
-
 
 	// 初期の値が０の場合に空にして先頭に0が出ないようにする
 	if(value == 0){
@@ -14,6 +11,7 @@ document.addEventListener('click',function(event){
 		// 値を追加して以降クリックしても空にするのを防ぐ
 		value = 1;
 	}
+
 	// 0or00を入力したときにdisplayが0or00なら初期値に戻す
 	// つまり次に入力した数字の先頭に0or00はつかない
 	if(event.target.matches('#zero')){
@@ -27,8 +25,6 @@ document.addEventListener('click',function(event){
 			berforeClickNumber = 0.;
 		}
 	}
-
-
 
 	if(event.target.matches('#eq')){
 		let calcResult = eval(display.innerHTML);
@@ -51,12 +47,10 @@ document.addEventListener('click',function(event){
 		return;
 	}
 
-
-
-// .numberでないクラスをクリックしても反応しない
-if(!event.target.matches('.number,.ope,.dotto')){
-	return;
-}
+	// .numberでないクラスをクリックしても反応しない
+	if(!event.target.matches('.number,.ope,.dotto')){
+		return;
+	}
 
 	display.innerHTML = berforeClickNumber + clickNumber ;
 
