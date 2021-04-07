@@ -1,6 +1,6 @@
 h3{
     height: 60px;
-    width: 780px;
+    width: auto;
     text-align: center;
     font-size: 40px;
     margin-top: 10px;
@@ -22,13 +22,13 @@ h3{
     font-size: 50px;
     text-align: center;
     height: 80px;
-    width: 800px;
+    width: auto;
     color: white;
     background-color: black;
 
 }
 
-.number,.clear,#eq {
+.number,.clear,#eq,.ope,.dotto {
     width: 100px;
     font-size: 50px;
     border: 2px solid;
@@ -41,6 +41,6 @@ h3{
 }
 
 .clear,#eq{
-    width: 300px;
+    width: 306px;
 }
 
